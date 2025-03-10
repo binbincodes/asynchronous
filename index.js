@@ -20,7 +20,10 @@ const token = ~~[Math.random() * 123456]
 
 const pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 function login(username) {
-    return {token, username}
+    setTimeout(() => {
+        return {token, username}
+}, 200)
+    
 }
 
 function getUser(token) {
