@@ -21,10 +21,14 @@ function login(username) {
     return {token, username}
 }
 
-function getUser() {
-//
+function getUser(token) {
+    if(token)
+    return {apiKey: "xkey123"}
 }
 
 const user = login("sabrina");
 
 console.log(user);
+
+const apiKey = getUser(user.token);
+console.log(apiKey);
