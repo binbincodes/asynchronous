@@ -27,8 +27,6 @@ function getUser(token) {
 }
 
 const user = login("sabrina");
-
-console.log(user);
-
+console.log(user.token)
 const apiKey = getUser(user.token);
 console.log(apiKey);
