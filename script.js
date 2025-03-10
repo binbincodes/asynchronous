@@ -7,7 +7,7 @@ function login(username, callback) {
     return new Promise((success, failed) => {
         setTimeout(() => {
             if (username !== "sabrina") failed('sorry wrong data')
-            success(token)
+            success({token})
         }, 200)
     })
 }
@@ -34,6 +34,10 @@ function getPictures(apiKey, callback) {
 }
 
 const user = login("sabrina")
-user.then(function () {
-    console.log('processing')
-})
+user.then(function (response) {
+    const { token } = response
+    getUser(token). then(function (response){
+        const { apiKey } = response
+        console.log(apiKey)
+    }).catch(err => console.error(err))
+}).catch(err => console.error(err))
