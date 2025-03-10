@@ -1,5 +1,4 @@
 const token = ~~[Math.random() * 123456]
-
 const pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 
 // promise
@@ -15,10 +14,14 @@ function login(username, callback) {
 
 function getUser(token, callback) {
     console.log('processing apiKey now...')
-    if (token)
-        setTimeout(() => {
-            callback({ apiKey: "xkey123" })
-        }, 500)
+    return new Promise((success, failed) => {
+        if (!token) failed("no token")
+        if (token)
+            setTimeout(() => {
+                callback({ apiKey: "xkey123" })
+            }, 500)
+    })
+
 }
 
 function getPictures(apiKey, callback) {
@@ -31,4 +34,6 @@ function getPictures(apiKey, callback) {
 }
 
 const user = login("sabrina")
-console.log(user)
+user.then(function () {
+    console.log('processing')
+})
