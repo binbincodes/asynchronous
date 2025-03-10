@@ -19,9 +19,9 @@ tiga();
 const token = ~~[Math.random() * 123456]
 
 const pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
-function login(username) {
+function login(username, callback) {
     setTimeout(() => {
-        return {token, username}
+        callback ({token, username})
 }, 200)
     
 }
