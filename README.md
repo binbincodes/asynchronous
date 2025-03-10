@@ -1,0 +1,1 @@
+asynchronous adalah function berjalan secara pararel eksekusi, jadi dia tetap jalan pas kamu lagi mengerjakan yang lain
