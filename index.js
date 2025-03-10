@@ -35,10 +35,14 @@ function getPictures(apiKey) {
     if(apiKey) return  pictures
 }
 
-const user = login("sabrina");
+const user = login("sabrina", function(response){
+    console.log("done =>", response)
+});
 console.log(user.token)
-const apiKey = getUser(user.token);
+// const apiKey = getUser(user.token);
 console.log(apiKey);
 
 const getUserPicture = getPictures(apiKey)
 console.log(getUserPicture)
+
+console.log("user adalah =>", user)
