@@ -26,17 +26,21 @@ function login(username, callback) {
     
 }
 
-function getUser(token) {
+function getUser(token, callback) {
     if(token)
-    return {apiKey: "xkey123"}
+        setTimeout(() =>{
+     callback ({apiKey: "xkey123"})
+    }, 500)
 }
 
 function getPictures(apiKey) {
     if(apiKey) return  pictures
 }
 
-const user = login("sabrina", function(response){
-    console.log("done =>", response)
+login("sabrina", function(response){
+    const {token} = response
+    const apiKey = getUser(token)
+    console.log(apiKey);
 });
 console.log(user.token)
 // const apiKey = getUser(user.token);
