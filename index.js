@@ -44,5 +44,3 @@ console.log(apiKey);
 
 const getUserPicture = getPictures(apiKey)
 console.log(getUserPicture)
-
-console.log("user adalah =>", user)
