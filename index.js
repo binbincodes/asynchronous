@@ -16,9 +16,9 @@ satu();
 dua();
 tiga();
 
-const token = ~~[Math.random() * 123456]
+// const token = ~~[Math.random() * 123456]
 
-const pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+// const pictures = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 function login(username, callback) {
     setTimeout(() => {
         callback({ token, username })
